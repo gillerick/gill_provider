@@ -3,14 +3,11 @@ import 'package:provider/provider.dart';
 import 'main.dart';
 import 'second.dart';
 
-
-class HomePage extends StatelessWidget {
+class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String name = context.read<DataHolder>().name;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(context.read<DataHolder>().name),
-      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
@@ -19,9 +16,7 @@ class HomePage extends StatelessWidget {
         },
       ),
       body: Center(
-        child: TextFormField(
-          onChanged: (val) => context.read<DataHolder>().change(name: val),
-        ),
+        child: Text(name),
       ),
     );
   }
