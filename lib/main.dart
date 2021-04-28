@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // ignore_for_file: public_member_api_docs, lines_longer_than_80_chars
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
+import 'second.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,17 +43,6 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class Page2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    String name = context.read<DataHolder>().name;
-    return Scaffold(
-      body: Center(
-        child: Text(name),
-      ),
-    );
-  }
-}
 
 class DataHolder with ChangeNotifier, DiagnosticableTreeMixin {
   String _name = "";
